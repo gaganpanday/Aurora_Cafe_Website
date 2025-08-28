@@ -13,7 +13,7 @@ const ITEMS = [
     desc:"Grilled chicken and veggies in a warm wrap.",
     ingredients:["Chicken","Tortilla","Lettuce","Tomato","Garlic sauce"]},
   {id:"tea-masala", name:"Masala Tea", price:1.2, discount:15,
-    img:"images/masalaTea.jpg",
+    img:"images/MasalaTea.jpg",
     desc:"Spiced milk tea.",
     ingredients:["Black tea","Milk","Cardamom","Ginger","Cinnamon"]},
   {id:"coffee-latte", name:"Caffè Latte", price:2.0, discount:20,
