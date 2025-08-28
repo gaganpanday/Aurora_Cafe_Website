@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Aurora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="#" class="brand" aria-label="Cafe home">
+      <span class="brand-logo" aria-hidden="true"></span>
+      <span>Café Aurora</span>
+    </a>
+    <div class="nav-links" role="navigation" aria-label="primary">
+      <a href="#home" class="active">Home</a>
+      <a href="#items">Items</a>
+      <a href="#memories">Memories</a>
+      <a href="#offers">Offers</a>
+      <a href="cart.html" id="cartLink" class="cart-pill" aria-live="polite">
+        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3h2l2 12h10l2-8H7" stroke="#eaffea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.8" fill="#eaffea"/><circle cx="18" cy="21" r="1.8" fill="#eaffea"/></svg>
+        <span id="cartCount">0 items</span>
+      </a>
+      <div id="cartThumbs" class="cart-thumbs" aria-hidden="true"></div>
+      <a href="sign-in.html" class="btn" style="padding:8px 12px">Sign In</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero container">
+  <div>
+    <div id="homeTag" class="tag">Fresh bites · Hot sips</div>
+    <h1 id="homeTitle">Modern café ordering. Quick. Clear. Mobile-first.</h1>
+    <p id="homeDesc">Fast food, tea, coffee, and bakery. Tap Items to order. Discounts applied automatically.</p>
+    <div class="cta">
+      <a id="btnBrowse" href="#items" class="btn">Browse Items</a>
+      <a id="btnMemories" href="#memories" class="btn-secondary">View Memories</a>
+    </div>
+  </div>
+  <div class="card no-border">
+    <div class="card-img"><img src="images/cafe.jpg" alt="Coffee and pastry"></div>
+  </div>
+</section>
+
+<!-- ITEMS -->
+<section id="items" class="container">
+  <div class="section-head">
+    <h2 id="itemsH2">Items</h2>
+    <div id="itemsHint" class="muted">Click a card for ingredients</div>
+  </div>
+  <div id="itemsGrid" class="grid items" aria-live="polite"></div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="container">
+  <h2 id="offersH2">Offers</h2>
+  <a class="offer-strip card" href="#items" aria-label="Christmas Offer: 10% discount on all items" style="margin-top:12px">
+    <img class="offer-strip-img" src="https://www.onlinekhabar.com/wp-content/uploads/2025/08/KFC_GOLD_OK_1230x100_3_optimized.gif" alt="Christmas Offer: 10% discount on all items">
+  </a>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories" class="container">
+  <div class="section-head">
+    <h2 id="memoriesH2">Memories</h2>
+  </div>
+  <div id="gallery" class="gallery" aria-live="polite"></div>
+</section>
+
+<!-- CAREERS removed as requested -->
+
+
+
+<!-- ITEM MODAL -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <div class="modal-header">
+      <strong id="modalTitle">Item</strong>
+      <button class="close" aria-label="Close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body">
+      <div id="modalImgWrap" class="card-img" style="border-radius:12px;overflow:hidden;margin-bottom:10px"></div>
+      <div class="muted" id="modalDesc"></div>
+      <h3 style="margin:12px 0 8px">Ingredients</h3>
+      <ul id="modalIngr" style="margin:0 0 6px 18px"></ul>
+      <div class="price"><span class="now" id="modalPrice"></span> <span class="was muted" id="modalWas"></span> <span class="badge" id="modalDisc" style="margin-left:8px"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--panel);color:var(--muted);padding:32px 0 18px;margin-top:48px;border-top:1px solid rgba(148,163,184,.15)">
+  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+    <div>
+      <strong style="color:var(--brand)">Café Aurora</strong> &copy; 2025
+      <span style="margin-left:12px">Modern café ordering, mobile-first.</span>
+    </div>
+    <div style="display:flex;gap:18px">
+      
+      <a href="mailto:hello@cafearora.example" style="color:var(--muted)">Contact</a>
+      <a href="#offers" style="color:var(--muted)">Offers</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<!-- Language overlay -->
+<div id="langOverlay" class="lang-overlay">
+  <div class="lang-card">
+    <div class="lang-inner">
+      <div class="lang-head">
+        <h2>Select your language</h2>
+        <span class="lang-default">Default: English</span>
+      </div>
+      <div id="langGrid" class="lang-grid" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

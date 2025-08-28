@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Aurora — Sign In</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .auth-wrap{min-height:calc(100vh - 64px - 140px);display:grid;place-items:center;padding:48px 16px}
+  .auth-card{display:grid;grid-template-columns:1.1fr .9fr;gap:0;max-width:980px;width:100%;border-radius:16px;overflow:hidden;border:1px solid rgba(148,163,184,.15);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));box-shadow:var(--shadow)}
+  .auth-side{background:radial-gradient(120% 120% at 0% 0%,rgba(124,58,237,.18),transparent 60%);padding:26px}
+  .auth-side h3{margin:0 0 6px}
+  .auth-side p{color:var(--muted);margin:0 0 16px}
+  .auth-hero{aspect-ratio:4/3;border-radius:12px;overflow:hidden}
+  .tabs{display:flex;gap:8px;margin-bottom:16px}
+  .tab{padding:8px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.35);background:rgba(148,163,184,.08);color:#fff;cursor:pointer}
+  .tab.active{background:rgba(124,58,237,.2);border-color:rgba(124,58,237,.5)}
+  .auth-form{padding:26px;display:flex;flex-direction:column;gap:12px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field input{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:transparent;color:#fff}
+  .rowx{display:flex;justify-content:space-between;align-items:center}
+  .muted-small{color:var(--muted);font-size:12px}
+  @media (max-width:900px){.auth-card{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="index.html#home" class="brand" aria-label="Cafe home">
+      <span class="brand-logo" aria-hidden="true"></span>
+      <span>Café Aurora</span>
+    </a>
+    <div class="nav-links" role="navigation" aria-label="primary">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#items">Items</a>
+      <a href="index.html#memories">Memories</a>
+      <a href="index.html#offers">Offers</a>
+      <a href="cart.html" id="cartLink" class="cart-pill" aria-live="polite">
+        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3h2l2 12h10l2-8H7" stroke="#eaffea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.8" fill="#eaffea"/><circle cx="18" cy="21" r="1.8" fill="#eaffea"/></svg>
+        <span id="cartCount">0 items</span>
+      </a>
+      <div id="cartThumbs" class="cart-thumbs" aria-hidden="true"></div>
+    </div>
+  </div>
+</nav>
+
+<section class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-side">
+      <h3>Welcome back to Café Aurora</h3>
+      <p>Order faster, track your favorites, and unlock exclusive offers.</p>
+      <div class="auth-hero"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop" alt="Coffee and pastry"></div>
+    </div>
+    <div class="auth-form">
+      <div class="tabs">
+        <button class="tab active" id="tab-login" type="button">Login</button>
+        <button class="tab" id="tab-signup" type="button">Sign Up</button>
+      </div>
+      <form id="form-login" onsubmit="event.preventDefault();" style="display:block">
+        <div class="field"><label>Email<input type="email" required placeholder="you@example.com"></label></div>
+        <div class="field"><label>Password<input type="password" required placeholder="••••••••"></label></div>
+        <div class="rowx"><label style="display:flex;align-items:center;gap:8px"><input type="checkbox"> <span class="muted-small">Remember me</span></label><a href="#" class="muted-small">Forgot password?</a></div>
+        <button class="btn" type="submit">Login</button>
+      </form>
+      <form id="form-signup" onsubmit="event.preventDefault();" style="display:none">
+        <div class="field"><label>Full name<input type="text" required placeholder="Jane Doe"></label></div>
+        <div class="field"><label>Email<input type="email" required placeholder="you@example.com"></label></div>
+        <div class="field"><label>Password<input type="password" required placeholder="Create a password"></label></div>
+        <button class="btn" type="submit" style="margin-top:8px">Create account</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--panel);color:var(--muted);padding:32px 0 18px;margin-top:48px;border-top:1px solid rgba(148,163,184,.15)">
+  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+    <div>
+      <strong style="color:var(--brand)">Café Aurora</strong> &copy; 2025
+      <span style="margin-left:12px">Modern café ordering, mobile-first.</span>
+    </div>
+    <div style="display:flex;gap:18px">
+      <a href="mailto:hello@cafearora.example" style="color:var(--muted)">Contact</a>
+      <a href="index.html#offers" style="color:var(--muted)">Offers</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const tabLogin = document.getElementById('tab-login');
+  const tabSignup = document.getElementById('tab-signup');
+  const formLogin = document.getElementById('form-login');
+  const formSignup = document.getElementById('form-signup');
+  function setTab(which){
+    const isLogin = which === 'login';
+    tabLogin.classList.toggle('active', isLogin);
+    tabSignup.classList.toggle('active', !isLogin);
+    formLogin.style.display = isLogin ? 'block' : 'none';
+    formSignup.style.display = isLogin ? 'none' : 'block';
+  }
+  tabLogin.addEventListener('click', ()=>setTab('login'));
+  tabSignup.addEventListener('click', ()=>setTab('signup'));
+  function getReturn(){
+    const p = new URLSearchParams(location.search);
+    return p.get('return') || 'cart.html';
+  }
+  function completeAuth(){
+    if(typeof signIn === 'function') signIn();
+    location.href = getReturn();
+  }
+  formLogin.addEventListener('submit', completeAuth);
+  formSignup.addEventListener('submit', completeAuth);
+</script>
+<!-- Language overlay -->
+<div id="langOverlay" class="lang-overlay">
+  <div class="lang-card">
+    <div class="lang-inner">
+      <div class="lang-head">
+        <h2>Select your language</h2>
+        <span class="lang-default">Default: English</span>
+      </div>
+      <div id="langGrid" class="lang-grid" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
