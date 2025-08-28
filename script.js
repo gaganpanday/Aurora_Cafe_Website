@@ -255,9 +255,14 @@ function openImageModal(src, alt){
 /* ---------- Memories uploader ---------- */
 const GALLERY_KEY = "aurora_memories_v1";
 const ADMIN_DEFAULTS = [
-  "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1200&auto=format&fit=crop",
+  "images/memory1.jpg",
+  "images/memory2.jpg",
+  "images/memory3.jpg",
+  "images/memory4jpg",
+  "images/memory5.jpg",
+  "images/memory7.jpg",
+  "images/memory8.jpg",
+  "images/memory9.jpg",
 
 ];
 function loadMem(){
