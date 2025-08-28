@@ -259,10 +259,7 @@ const ADMIN_DEFAULTS = [
   "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1200&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1445077100181-a33e9ac94db0?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1521017432531-fbd92d1cf8d5?q=80&w=1200&auto=format&fit=crop"
+ 
 ];
 function loadMem(){
   const raw = JSON.parse(localStorage.getItem(GALLERY_KEY)||"null");
